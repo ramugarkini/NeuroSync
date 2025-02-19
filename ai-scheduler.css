@@ -11,7 +11,6 @@ body {
 /* Header */
 header {
     padding: 20px;
-    font-size: 1.5em;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
     backdrop-filter: blur(10px);
@@ -23,31 +22,33 @@ header {
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-/* User Input */
-.user-input {
+/* Scheduler Section */
+.scheduler {
+    width: 80%;
     margin: 20px auto;
     padding: 15px;
-    width: 50%;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-.user-input select, .glow-btn {
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
+/* User Input */
+.user-input {
+    margin: 20px;
 }
 
-/* AI Schedule Output */
+select, button {
+    font-size: 1.2em;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Schedule Output */
 .schedule-output {
+    width: 80%;
     margin: 20px auto;
     padding: 15px;
-    width: 70%;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
@@ -55,19 +56,16 @@ header {
 table {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 15px;
 }
 
 th, td {
     padding: 10px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
 }
 
-th {
-    color: #00ffff;
-    text-shadow: 0 0 5px #00ffff;
-}
-
-/* AI Assistant Tips */
+/* AI Insights */
 .ai-tips {
     margin-top: 20px;
     font-size: 1.2em;
@@ -75,7 +73,7 @@ th {
     text-shadow: 0 0 10px #00ffff;
 }
 
-/* Button Styling */
+/* Button */
 .glow-btn {
     background: linear-gradient(45deg, #00ffff, #0099ff);
     border: none;
