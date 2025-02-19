@@ -40,7 +40,8 @@ select {
 
 /* AI-Generated Schedule */
 .schedule-output {
-    width: 90%;
+    width: 100%;
+    max-width: 1000px;
     margin: 20px auto;
     padding: 15px;
     background: rgba(255, 255, 255, 0.1);
@@ -48,25 +49,34 @@ select {
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
 }
 
-/* Responsive Table */
+/* Table Styling */
 .schedule-output table {
     width: 100%;
     border-collapse: collapse;
-    overflow-x: auto;
-    display: block; /* Enables horizontal scrolling */
-    white-space: nowrap;
 }
 
 .schedule-output th,
 .schedule-output td {
-    padding: 10px;
+    padding: 12px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     text-align: center;
+    word-wrap: break-word;
 }
 
 .schedule-output th {
     color: #00ffff;
     text-shadow: 0 0 5px #00ffff;
+}
+
+/* Table Responsiveness */
+.table-container {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.schedule-output table {
+    min-width: 600px; /* Ensures the table is never too small */
+    white-space: nowrap;
 }
 
 /* AI Tips */
@@ -99,14 +109,17 @@ select {
 /* Mobile Responsiveness */
 @media screen and (max-width: 768px) {
     .schedule-output {
-        width: 100%;
+        width: 95%;
         overflow-x: auto; /* Enables scrolling for small screens */
     }
 
-    .schedule-output table {
-        display: block;
+    .table-container {
+        width: 100%;
         overflow-x: auto;
-        white-space: nowrap;
+    }
+
+    .schedule-output table {
+        min-width: 600px;
     }
 
     .glow-btn {
