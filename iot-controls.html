@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - IoT Device Control</title>
+    <link rel="stylesheet" href="iot-controls.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="neon-text">🔧 IoT Device Control</h1>
+            <p class="subtitle">AI-Optimized Smart Lighting & Sound Adjustments</p>
+        </header>
+
+        <!-- IoT Controls -->
+        <section class="iot-controls">
+            <h2>🎛 Adjust Your Environment</h2>
+            
+            <div class="control-group">
+                <label for="light-level">💡 Light Intensity:</label>
+                <input type="range" id="light-level" min="0" max="100" value="50">
+            </div>
+
+            <div class="control-group">
+                <label for="sound-level">🔊 Sound Volume:</label>
+                <input type="range" id="sound-level" min="0" max="100" value="50">
+            </div>
+
+            <button class="glow-btn" id="apply-settings">Apply AI Adjustments</button>
+        </section>
+
+        <!-- IoT Timeline -->
+        <section class="timeline">
+            <h2>📅 IoT Adjustment Timeline</h2>
+            <ul id="timeline-list">
+                <!-- AI Timeline updates dynamically -->
+            </ul>
+        </section>
+
+        <!-- IoT Status Graph -->
+        <section class="graph-section">
+            <h2>📊 IoT Light & Sound Monitoring</h2>
+            <div class="chart-container">
+                <canvas id="iotChart"></canvas>
+            </div>
+        </section>
+
+        <!-- AI Insights -->
+        <div class="ai-insights">
+            <h3>🔍 AI Smart Adjustments</h3>
+            <p id="ai-iot-tip">Loading AI Recommendations...</p>
+        </div>
+
+        <!-- Back to Dashboard Button -->
+        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+
+    </div>
+
+    <script src="iot-controls.js"></script>
+
+</body>
+</html>

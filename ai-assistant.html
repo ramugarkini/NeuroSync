@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - AI Assistant</title>
+    <link rel="stylesheet" href="ai-assistant.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="neon-text">🤖 AI Assistant</h1>
+            <p class="subtitle">Smart Notifications, Task Reminders & Study Insights</p>
+        </header>
+
+        <!-- AI Notification Section -->
+        <section class="ai-notifications">
+            <h2>🔔 AI Smart Alerts</h2>
+            <ul id="notification-list">
+                <!-- AI notifications will be dynamically added -->
+            </ul>
+        </section>
+
+        <!-- AI Chat Assistant -->
+        <section class="ai-chat">
+            <h2>💬 Ask NeuroSync AI</h2>
+            <div class="chat-container">
+                <div id="chat-box"></div>
+                <input type="text" id="user-input" placeholder="Ask anything about study, work, sleep...">
+                <button class="glow-btn" id="send-btn">Send</button>
+            </div>
+        </section>
+
+        <!-- AI Insights Timeline -->
+        <section class="timeline">
+            <h2>📅 AI Interventions Timeline</h2>
+            <ul id="timeline-list">
+                <!-- AI Timeline updates dynamically -->
+            </ul>
+        </section>
+
+        <!-- AI Assistance Graph -->
+        <section class="graph-section">
+            <h2>📊 AI Focus Boost Interventions</h2>
+            <div class="chart-container">
+                <canvas id="aiChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Back to Dashboard Button -->
+        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+
+    </div>
+
+    <script src="ai-assistant.js"></script>
+
+</body>
+</html>

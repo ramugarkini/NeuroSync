@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - Sleep Cycle Optimizer</title>
+    <link rel="stylesheet" href="sleep-optimizer.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="neon-text">🌙 Sleep Cycle Optimizer</h1>
+            <p class="subtitle">AI-Powered Sleep Tracking & Optimization</p>
+        </header>
+
+        <!-- Sleep Tracking Section -->
+        <section class="sleep-tracker">
+            <h2>🛌 Your Sleep Pattern</h2>
+            <div class="chart-container">
+                <canvas id="sleepChart"></canvas>
+            </div>
+        </section>
+
+        <!-- AI-Optimized Sleep Schedule -->
+        <section class="ai-sleep-schedule">
+            <h2>📅 AI-Optimized Sleep Timeline</h2>
+            <ul id="sleep-timeline">
+                <!-- AI-generated sleep plan will be dynamically added -->
+            </ul>
+        </section>
+
+        <!-- IoT-Based Sleep Adjustments -->
+        <section class="iot-sleep-controls">
+            <h2>🔧 Smart Sleep Environment</h2>
+            <p>AI adjusts lighting & sound for **optimal deep sleep**.</p>
+            <button class="glow-btn" id="optimize-sleep">Enable AI Sleep Mode</button>
+        </section>
+
+        <!-- AI Sleep Insights -->
+        <div class="ai-insights">
+            <h3>🔍 AI Sleep Insights</h3>
+            <p id="ai-sleep-tip">Loading AI Recommendations...</p>
+        </div>
+
+        <!-- Back to Dashboard Button -->
+        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+
+    </div>
+
+    <script src="sleep-optimizer.js"></script>
+
+</body>
+</html>

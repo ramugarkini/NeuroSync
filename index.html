@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Glowing Header -->
+        <header>
+            <h1 class="neon-text">NeuroSync AI</h1>
+            <p class="subtitle">Optimize Your Brain, Sleep, Food & Productivity</p>
+        </header>
+
+        <!-- AI Assistant Notification -->
+        <div class="ai-assistant">
+            <p id="ai-message">Loading AI Recommendations...</p>
+        </div>
+
+        <!-- Main Dashboard Sections -->
+        <section class="dashboard">
+            <!-- AI Scheduler -->
+            <div class="dashboard-card ai-scheduler">
+                <h2>📅 AI Scheduler</h2>
+                <p>Generate a personalized daily schedule for study, work, and relaxation.</p>
+                <button class="glow-btn" onclick="redirectTo('ai-scheduler.html')">Open Scheduler</button>
+            </div>
+
+            <!-- Productivity Tracker -->
+            <div class="dashboard-card productivity">
+                <h2>⚡ Productivity Tracker</h2>
+                <p>Monitor focus levels, energy dips, and AI-powered work sessions.</p>
+                <button class="glow-btn" onclick="redirectTo('productivity-tracker.html')">Track Productivity</button>
+            </div>
+
+            <!-- Food & Hydration -->
+            <div class="dashboard-card food-hydration">
+                <h2>🍽 Food & Hydration</h2>
+                <p>AI-recommended diet & hydration to fuel your cognitive performance.</p>
+                <button class="glow-btn" onclick="redirectTo('food-hydration.html')">Check Nutrition</button>
+            </div>
+
+            <!-- Sleep Optimizer -->
+            <div class="dashboard-card sleep-optimizer">
+                <h2>🌙 Sleep Cycle Optimizer</h2>
+                <p>AI-monitored sleep cycles & smart adjustments for deep recovery.</p>
+                <button class="glow-btn" onclick="redirectTo('sleep-optimizer.html')">Optimize Sleep</button>
+            </div>
+
+            <!-- IoT Smart Controls -->
+            <div class="dashboard-card iot-controls">
+                <h2>🔧 IoT Smart Controls</h2>
+                <p>Control your environment with AI-adjusted lighting & sound.</p>
+                <button class="glow-btn" onclick="redirectTo('iot-controls.html')">Control IoT</button>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>Powered by <span class="neon-text">NeuroSync AI</span></p>
+        </footer>
+    </div>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

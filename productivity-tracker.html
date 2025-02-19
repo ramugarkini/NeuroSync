@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - Productivity Tracker</title>
+    <link rel="stylesheet" href="productivity-tracker.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="neon-text">⚡ Productivity Tracker</h1>
+            <p class="subtitle">Monitor your focus, fatigue & cognitive performance</p>
+        </header>
+
+        <!-- Timeline Section -->
+        <section class="timeline">
+            <h2>📅 Daily Productivity Timeline</h2>
+            <ul id="timeline-list">
+                <!-- Timeline updates dynamically -->
+            </ul>
+        </section>
+
+        <!-- Productivity Graph (Now Compact) -->
+        <section class="graph-section">
+            <h2>📊 Productivity Over Time</h2>
+            <div class="chart-container">
+                <canvas id="productivityChart"></canvas>
+            </div>
+        </section>
+
+        <!-- AI Productivity Insights -->
+        <div class="ai-insights">
+            <h3>🔍 AI Performance Insights</h3>
+            <p id="ai-productivity-tip">Loading AI Insights...</p>
+        </div>
+
+        <!-- Back to Dashboard Button -->
+        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+
+    </div>
+
+    <script src="productivity-tracker.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - AI Scheduler</title>
+    <link rel="stylesheet" href="ai-scheduler.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="neon-text">AI-Powered Scheduler</h1>
+            <p class="subtitle">Personalized Daily Schedule for Study, Work & Productivity</p>
+        </header>
+
+        <!-- AI-generated Timetable Section -->
+        <section class="scheduler">
+            <h2>📅 Your AI-Optimized Schedule</h2>
+            <p>Select your goal and let NeuroSync AI create your ideal daily routine.</p>
+
+            <!-- User Input Section -->
+            <div class="user-input">
+                <label for="goal">Choose Your Goal:</label>
+                <select id="goal">
+                    <option value="study">🎓 Exam Preparation</option>
+                    <option value="work">💼 Work Productivity</option>
+                    <option value="focus">🔬 Focus & Cognitive Enhancement</option>
+                </select>
+                <button class="glow-btn" id="generate-schedule">Generate Schedule</button>
+            </div>
+
+            <!-- AI-Generated Schedule -->
+            <div class="schedule-output">
+                <h3>🕒 AI-Generated Timetable</h3>
+                <table id="schedule-table">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Task</th>
+                            <th>Why?</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Schedule will be populated here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- AI Tips -->
+        <div class="ai-tips">
+            <p id="ai-tip">Loading AI Insights...</p>
+        </div>
+
+        <!-- Back to Dashboard Button -->
+        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+
+    </div>
+
+    <script src="ai-scheduler.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* Global Styles */
+body {
+    background: radial-gradient(circle, #0a0a0a, #020202);
+    color: #fff;
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    padding: 20px;
+    font-size: 1.5em;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Neon Text */
+.neon-text {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* User Input */
+.user-input {
+    margin: 20px auto;
+    padding: 15px;
+    width: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.user-input select, .glow-btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+/* AI Schedule Output */
+.schedule-output {
+    margin: 20px auto;
+    padding: 15px;
+    width: 70%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+th {
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+}
+
+/* AI Assistant Tips */
+.ai-tips {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Button Styling */
+.glow-btn {
+    background: linear-gradient(45deg, #00ffff, #0099ff);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    transition: 0.3s;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+    transform: scale(1.1);
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - Food & Hydration Assistant</title>
+    <link rel="stylesheet" href="food-hydration.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1 class="neon-text">🍽 Food & Hydration Assistant</h1>
+            <p class="subtitle">AI-Powered Nutritional Timetable & Hydration Tracker</p>
+        </header>
+
+        <!-- AI Meal Plan Section -->
+        <section class="meal-plan">
+            <h2>🍲 AI-Optimized Meal Plan</h2>
+            <table id="meal-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Meal</th>
+                        <th>Why?</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- AI-generated meal plan will be added dynamically -->
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Timeline Section -->
+        <section class="timeline">
+            <h2>📅 Hydration Timeline</h2>
+            <ul id="timeline-list">
+                <!-- Timeline updates dynamically -->
+            </ul>
+        </section>
+
+        <!-- Hydration Graph (Compact View) -->
+        <section class="graph-section">
+            <h2>💧 Hydration Levels</h2>
+            <div class="chart-container">
+                <canvas id="hydrationChart"></canvas>
+            </div>
+        </section>
+
+        <!-- AI Nutrition Insights -->
+        <div class="ai-insights">
+            <h3>🔍 AI Nutrition Insights</h3>
+            <p id="ai-nutrition-tip">Loading AI Insights...</p>
+        </div>
+
+        <!-- Back to Dashboard Button -->
+        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+
+    </div>
+
+    <script src="food-hydration.js"></script>
+
+</body>
+</html>
