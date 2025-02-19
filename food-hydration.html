@@ -17,7 +17,7 @@
             <p class="subtitle">AI-Powered Nutritional Timetable & Hydration Tracker</p>
         </header>
 
-        <!-- AI Meal Plan Section -->
+        <!-- Meal Plan Section -->
         <section class="meal-plan">
             <h2>🍲 AI-Optimized Meal Plan</h2>
             <table id="meal-table">
@@ -28,35 +28,40 @@
                         <th>Why?</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <!-- AI-generated meal plan will be added dynamically -->
-                </tbody>
+                <tbody></tbody>
             </table>
         </section>
 
-        <!-- Timeline Section -->
-        <section class="timeline">
-            <h2>📅 Hydration Timeline</h2>
-            <ul id="timeline-list">
-                <!-- Timeline updates dynamically -->
-            </ul>
+        <!-- Meal Tracking -->
+        <section class="meal-tracker">
+            <h2>🍽 Log Your Meals</h2>
+            <p class="meal-intake" id="meal-count">🍽 Meals Logged: 0</p>
+            <button class="meal-button" id="log-meal">Log Meal</button>
+            <button class="reset-button" id="reset-meal">Reset</button>
         </section>
 
-        <!-- Hydration Graph (Compact View) -->
+        <!-- Hydration Tracking -->
+        <section class="hydration-tracker">
+            <h2>💧 Track Your Water Intake</h2>
+            <p class="water-intake" id="current-intake">💧 0ml / 2000ml</p>
+            <button class="water-button" id="track-water">+250ml</button>
+            <button class="reset-button" id="reset-water">Reset</button>
+        </section>
+
+        <!-- Hydration Graph -->
         <section class="graph-section">
-            <h2>💧 Hydration Levels</h2>
+            <h2>📊 Hydration Levels</h2>
             <div class="chart-container">
                 <canvas id="hydrationChart"></canvas>
             </div>
         </section>
 
-        <!-- AI Nutrition Insights -->
+        <!-- AI Insights -->
         <div class="ai-insights">
             <h3>🔍 AI Nutrition Insights</h3>
             <p id="ai-nutrition-tip">Loading AI Insights...</p>
         </div>
 
-        <!-- Back to Dashboard Button -->
         <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
 
     </div>

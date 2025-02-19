@@ -1,62 +1,81 @@
 $(document).ready(function () {
     // AI Productivity Insights
-    const aiProductivityMessages = [
-        "Your focus is at its peak! Keep pushing forward.",
-        "You're losing concentration—take a 5-minute break.",
-        "Hydration levels are low. Drink water for better focus.",
-        "Time for a quick meditation session to reset your mind.",
-        "Consider a power nap to refresh cognitive ability."
+    const aiProductivityTips = [
+        "Your peak focus hours are usually in the morning. Use this time for deep work.",
+        "Take a 5-minute walk every 60 minutes to prevent cognitive fatigue.",
+        "Power naps of 20 minutes improve memory and mental clarity.",
+        "Avoid distractions by using the Pomodoro technique: 25 min work, 5 min break.",
+        "Hydration boosts brain function by 10% – keep drinking water regularly."
     ];
 
-    function updateAIProductivityMessage() {
-        let message = aiProductivityMessages[Math.floor(Math.random() * aiProductivityMessages.length)];
-        $("#ai-productivity-tip").text(message);
+    function updateAIProductivityTip() {
+        let tip = aiProductivityTips[Math.floor(Math.random() * aiProductivityTips.length)];
+        $("#ai-productivity-tip").text(tip);
     }
 
-    updateAIProductivityMessage();
-    setInterval(updateAIProductivityMessage, 5000);
+    updateAIProductivityTip();
+    setInterval(updateAIProductivityTip, 5000);
 
-    // Timeline Updates
-    const timelineData = [
-        { time: "6:00 AM", task: "Wake up & Hydration", reason: "Boosts brain oxygen & focus" },
-        { time: "7:00 AM - 10:00 AM", task: "Deep Work Session", reason: "Peak cognitive hours" },
-        { time: "10:30 AM", task: "Brain Snack (Dark Chocolate, Nuts)", reason: "Enhances memory retention" },
-        { time: "12:00 PM", task: "Lunch Break", reason: "Balanced meal to sustain energy" },
-        { time: "2:00 PM", task: "Power Nap", reason: "Recharges focus & prevents burnout" },
-        { time: "4:00 PM", task: "Afternoon Work Session", reason: "Optimized execution phase" }
+    // Productivity Timeline Data (Dynamic Tracking)
+    const productivityTimeline = [
+        ["6:00 AM", "Wake Up + Planning", "Optimizes brain function & sets daily goals"],
+        ["8:00 AM", "Deep Work Session (Coding, Writing)", "Brain's peak cognitive performance time"],
+        ["10:30 AM", "Short Break + Hydration", "Prevents mental fatigue & restores focus"],
+        ["12:00 PM", "Mid-Day Work (Meetings, Reviews)", "Best for collaborative thinking"],
+        ["3:00 PM", "Afternoon Focus Block", "Second peak productivity window"],
+        ["5:30 PM", "Exercise & Active Break", "Boosts oxygen flow to the brain"],
+        ["7:00 PM", "Wind Down + Passive Learning", "Great for absorbing knowledge"],
+        ["10:00 PM", "Prepare for Sleep", "Essential for cognitive memory retention"]
     ];
 
-    timelineData.forEach(event => {
-        $("#timeline-list").append(`<li><strong>${event.time}:</strong> ${event.task} - ${event.reason}</li>`);
+    productivityTimeline.forEach(event => {
+        $("#timeline-list").append(`<li><strong>${event[0]}:</strong> ${event[1]} - ${event[2]}</li>`);
     });
 
-    // Productivity Graph - Now Compact
+    // User Productivity Input (Track Work Sessions)
+    let focusScore = 0;
+    $("#log-session").click(function () {
+        let sessionScore = Math.floor(Math.random() * 30) + 70; // Random efficiency score (70-100)
+        focusScore += sessionScore;
+        $("#session-score").text(`🔹 Last Session: ${sessionScore}% | Total: ${focusScore}%`);
+        updateProductivityChart(sessionScore);
+    });
+
+    // Productivity Graph Data
+    let productivityLevels = [80, 85, 82, 88, 90, 75, 78, 84];
+    let productivityTimes = ["6 AM", "8 AM", "10 AM", "12 PM", "2 PM", "4 PM", "6 PM", "8 PM"];
+
+    function updateProductivityChart(newScore) {
+        productivityLevels.shift();
+        productivityLevels.push(newScore);
+        chart.update();
+    }
+
+    // Productivity Graph
     var ctx = document.getElementById("productivityChart").getContext("2d");
-    var productivityChart = new Chart(ctx, {
+    var chart = new Chart(ctx, {
         type: "line",
         data: {
-            labels: ["6 AM", "9 AM", "12 PM", "3 PM", "6 PM", "9 PM"],
+            labels: productivityTimes,
             datasets: [{
-                label: "Productivity Level",
-                data: [80, 90, 75, 60, 50, 40],
+                label: "Productivity Score (%)",
+                data: productivityLevels,
                 borderColor: "#00ffff",
                 backgroundColor: "rgba(0, 255, 255, 0.2)",
-                borderWidth: 2
+                borderWidth: 2,
+                pointRadius: 5,
+                pointBackgroundColor: "#00ffff"
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            scales: {
-                y: { min: 0, max: 100 }
+            plugins: {
+                legend: { display: false },
             },
-            layout: {
-                padding: {
-                    left: 10,
-                    right: 10,
-                    top: 10,
-                    bottom: 10
-                }
+            scales: {
+                x: { grid: { display: false }, ticks: { color: "#00ffff" } },
+                y: { grid: { color: "rgba(0, 255, 255, 0.2)" }, ticks: { color: "#00ffff" } }
             }
         }
     });

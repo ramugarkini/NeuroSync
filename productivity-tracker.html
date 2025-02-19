@@ -20,17 +20,22 @@
         <!-- Timeline Section -->
         <section class="timeline">
             <h2>📅 Daily Productivity Timeline</h2>
-            <ul id="timeline-list">
-                <!-- Timeline updates dynamically -->
-            </ul>
+            <ul id="timeline-list"></ul>
         </section>
 
-        <!-- Productivity Graph (Now Compact) -->
+        <!-- Productivity Graph -->
         <section class="graph-section">
             <h2>📊 Productivity Over Time</h2>
             <div class="chart-container">
                 <canvas id="productivityChart"></canvas>
             </div>
+        </section>
+
+        <!-- Focus Tracking -->
+        <section class="session-tracker">
+            <h2>🕒 Track Your Focus</h2>
+            <p id="session-score">🔹 Last Session: --% | Total: 0%</p>
+            <button class="log-session-btn" id="log-session">Log Productivity Session</button>
         </section>
 
         <!-- AI Productivity Insights -->
@@ -39,7 +44,6 @@
             <p id="ai-productivity-tip">Loading AI Insights...</p>
         </div>
 
-        <!-- Back to Dashboard Button -->
         <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
 
     </div>

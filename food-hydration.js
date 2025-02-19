@@ -29,20 +29,78 @@ $(document).ready(function () {
         $("#meal-table tbody").append(`<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td></tr>`);
     });
 
-    // Hydration Graph
+    // Hydration Data Points
+    const hydrationLevels = [95, 90, 85, 80, 75, 70, 65, 60];
+    const hydrationTimes = ["6 AM", "9 AM", "12 PM", "3 PM", "6 PM", "9 PM", "12 AM", "3 AM"];
+
+    function updateHydrationChart(newValue) {
+        hydrationLevels.shift();
+        hydrationLevels.push(newValue);
+        chart.update();
+    }
+
+    // Hydration Chart
     var ctx = document.getElementById("hydrationChart").getContext("2d");
-    new Chart(ctx, {
+    var chart = new Chart(ctx, {
         type: "line",
         data: {
-            labels: ["6 AM", "9 AM", "12 PM", "3 PM", "6 PM", "9 PM"],
+            labels: hydrationTimes,
             datasets: [{
-                label: "Hydration Level",
-                data: [90, 85, 80, 75, 70, 65],
+                label: "Hydration Level (%)",
+                data: hydrationLevels,
                 borderColor: "#00ffff",
                 backgroundColor: "rgba(0, 255, 255, 0.2)",
-                borderWidth: 2
+                borderWidth: 2,
+                pointRadius: 5,
+                pointBackgroundColor: "#00ffff"
             }]
         },
-        options: { responsive: true }
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { display: false },
+            },
+            scales: {
+                x: { grid: { display: false }, ticks: { color: "#00ffff" } },
+                y: { grid: { color: "rgba(0, 255, 255, 0.2)" }, ticks: { color: "#00ffff" } }
+            }
+        }
+    });
+
+    // Interactive Water Tracker
+    let currentWaterIntake = 0;
+    const dailyGoal = 2000;
+
+    $("#track-water").click(function () {
+        if (currentWaterIntake < dailyGoal) {
+            currentWaterIntake += 250; // Add 250ml per click
+            $("#current-intake").text(`💧 ${currentWaterIntake}ml / ${dailyGoal}ml`);
+            updateHydrationChart(95 - (currentWaterIntake / 2000) * 30);
+
+            if (currentWaterIntake >= dailyGoal) {
+                alert("✅ You have met your daily water intake goal!");
+            }
+        } else {
+            alert("🚀 You've already reached your hydration goal!");
+        }
+    });
+
+    $("#reset-water").click(function () {
+        currentWaterIntake = 0;
+        $("#current-intake").text(`💧 ${currentWaterIntake}ml / ${dailyGoal}ml`);
+        updateHydrationChart(95);
+    });
+
+    // Meal Logging
+    let loggedMeals = 0;
+    $("#log-meal").click(function () {
+        loggedMeals++;
+        $("#meal-count").text(`🍽 Meals Logged: ${loggedMeals}`);
+    });
+
+    $("#reset-meal").click(function () {
+        loggedMeals = 0;
+        $("#meal-count").text(`🍽 Meals Logged: ${loggedMeals}`);
     });
 });

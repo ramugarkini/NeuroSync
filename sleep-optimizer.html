@@ -20,6 +20,8 @@
         <!-- Sleep Tracking Section -->
         <section class="sleep-tracker">
             <h2>🛌 Your Sleep Pattern</h2>
+            <p id="sleep-hours">💤 Last Night: -- hrs | Total This Week: 0 hrs</p>
+            <button class="log-sleep-btn" id="log-sleep">Log Sleep</button>
             <div class="chart-container">
                 <canvas id="sleepChart"></canvas>
             </div>
@@ -28,15 +30,12 @@
         <!-- AI-Optimized Sleep Schedule -->
         <section class="ai-sleep-schedule">
             <h2>📅 AI-Optimized Sleep Timeline</h2>
-            <ul id="sleep-timeline">
-                <!-- AI-generated sleep plan will be dynamically added -->
-            </ul>
+            <ul id="sleep-timeline"></ul>
         </section>
 
         <!-- IoT-Based Sleep Adjustments -->
         <section class="iot-sleep-controls">
             <h2>🔧 Smart Sleep Environment</h2>
-            <p>AI adjusts lighting & sound for **optimal deep sleep**.</p>
             <button class="glow-btn" id="optimize-sleep">Enable AI Sleep Mode</button>
         </section>
 
@@ -46,7 +45,6 @@
             <p id="ai-sleep-tip">Loading AI Recommendations...</p>
         </div>
 
-        <!-- Back to Dashboard Button -->
         <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
 
     </div>

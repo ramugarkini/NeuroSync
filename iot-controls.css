@@ -1,4 +1,4 @@
-/* Global Styles */
+/* IoT Controls */
 body {
     background: radial-gradient(circle, #0a0a0a, #020202);
     color: #fff;
@@ -11,7 +11,6 @@ body {
 /* Header */
 header {
     padding: 20px;
-    font-size: 1.5em;
     background: rgba(255, 255, 255, 0.05);
     box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
     backdrop-filter: blur(10px);
@@ -23,7 +22,7 @@ header {
     text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
 }
 
-/* IoT Controls */
+/* IoT Control Section */
 .iot-controls {
     width: 80%;
     margin: 20px auto;
@@ -34,14 +33,16 @@ header {
 }
 
 .control-group {
-    margin: 15px;
+    margin: 15px 0;
+    font-size: 1.2em;
 }
 
 input[type="range"] {
-    width: 70%;
+    width: 100%;
+    accent-color: #00ffff;
 }
 
-/* Timeline */
+/* IoT Timeline */
 .timeline {
     width: 80%;
     margin: 20px auto;
@@ -63,9 +64,9 @@ input[type="range"] {
     text-align: left;
 }
 
-/* Graph Section - Compact */
+/* IoT Graph */
 .graph-section {
-    width: 80%;
+    width: 90%;
     margin: 20px auto;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
@@ -75,18 +76,10 @@ input[type="range"] {
 
 .chart-container {
     width: 100%;
-    height: 250px;
+    height: 200px;
 }
 
-/* AI Insights */
-.ai-insights {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #00ffff;
-    text-shadow: 0 0 10px #00ffff;
-}
-
-/* Button */
+/* Buttons */
 .glow-btn {
     background: linear-gradient(45deg, #00ffff, #0099ff);
     border: none;
