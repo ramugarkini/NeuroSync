@@ -1,4 +1,4 @@
-/* Global Styles */
+/* General Layout */
 body {
     background: radial-gradient(circle, #0a0a0a, #020202);
     color: #fff;
@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 
-/* Header */
+/* Glowing Header */
 header {
     padding: 20px;
     font-size: 1.5em;
@@ -25,55 +25,64 @@ header {
 
 /* AI Assistant */
 .ai-assistant {
-    width: 80%;
     margin: 20px auto;
     padding: 15px;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
     font-size: 1.2em;
 }
 
-/* Dashboard */
+/* Dashboard Layout */
 .dashboard {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Flexible grid */
+    gap: 20px;
+    padding: 20px;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: 20px;
 }
 
 /* Dashboard Cards */
 .dashboard-card {
-    width: 30%;
-    padding: 20px;
-    margin: 10px;
     background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(255, 255, 0, 0.8);
-    transition: 0.3s;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
 }
 
+/* Hover Effect */
 .dashboard-card:hover {
-    box-shadow: 0 0 20px rgba(255, 255, 0, 1);
     transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(0, 255, 255, 1);
 }
 
-/* Glow Buttons */
-.glow-btn {
+/* Titles inside Dashboard Cards */
+.dashboard-card h2 {
+    font-size: 1.5em;
+    color: #00ffff;
+    margin-bottom: 10px;
+}
+
+/* Button Container (Ensures full width on mobile) */
+.dashboard-card .glow-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 8px;
     background: linear-gradient(45deg, #00ffff, #0099ff);
     border: none;
     color: white;
-    padding: 15px 30px;
-    font-size: 18px;
-    margin: 10px;
-    border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
     transition: 0.3s;
+    display: block; /* Ensures full width */
+    margin-top: 10px;
 }
 
-.glow-btn:hover {
+/* Button Hover Effect */
+.dashboard-card .glow-btn:hover {
     box-shadow: 0 0 30px rgba(0, 255, 255, 1);
     transform: scale(1.1);
 }
@@ -82,7 +91,24 @@ header {
 footer {
     margin-top: 20px;
     padding: 10px;
+    font-size: 1.2em;
     background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(5px);
-    font-size: 1em;
+    text-shadow: 0 0 10px #00ffff;
+}
+
+/* Responsive Tweaks */
+@media screen and (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr; /* Single column for mobile */
+    }
+
+    .dashboard-card {
+        width: 90%;
+        margin: auto;
+    }
+
+    .glow-btn {
+        font-size: 14px;
+        padding: 12px;
+    }
 }
