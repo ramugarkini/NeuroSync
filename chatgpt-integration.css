@@ -1,0 +1,96 @@
+/* 🌌 Cyberpunk Background */
+body {
+    background: radial-gradient(circle, #0a0a0a, #020202) !important;
+    color: #fff !important;
+    font-family: 'Arial', sans-serif !important;
+}
+
+/* 🟡 Custom Header for NeuroSync AI */
+body::before {
+    content: "🤖 NeuroSync AI-Powered Scheduler";
+    display: block;
+    text-align: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* 🔥 Hide Upload File Button */
+button[aria-label="Upload files and more"] {
+    display: none !important;
+}
+
+/* 🔍 Hide Search Button */
+button[aria-label="Search"] {
+    display: none !important;
+}
+
+/* ❓ Hide Reason Button */
+button[aria-label="Reason"] {
+    display: none !important;
+}
+
+/* 🔥 Neon Chat Input Box */
+textarea {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: #00ffff !important;
+    border: 2px solid cyan !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    font-size: 18px !important;
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.6) !important;
+}
+
+/* 💡 Neon Buttons (Applies only to buttons) */
+button {
+    background: linear-gradient(45deg, #00ffff, #0099ff) !important;
+    border: none !important;
+    color: white !important;
+    padding: 10px 20px !important;
+    font-size: 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5) !important;
+    transition: 0.3s !important;
+}
+
+/* ✨ Button Hover Effects */
+button:hover {
+    box-shadow: 0 0 20px rgba(0, 255, 255, 1) !important;
+    transform: scale(1.05) !important;
+}
+
+/* 📱 Mobile Responsiveness */
+@media screen and (max-width: 768px) {
+    body::before {
+        font-size: 1.4em !important;
+        padding: 15px !important;
+    }
+
+    button {
+        font-size: 14px !important;
+        padding: 8px 15px !important;
+    }
+}
+
+
+
+
+/* ✅ Ensure visibility of ChatGPT elements */
+.mb-2.mt-1.flex.items-center.justify-between.sm\:mt-5 {
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+
+// hide
+.min-h-4 {
+    min-height: 1rem;
+    display: none !important;
+}
