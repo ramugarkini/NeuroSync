@@ -1,0 +1,80 @@
+body {
+    background-color: #0d1117;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+}
+
+.neon-title {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    text-align: center;
+}
+
+.subtitle, .act-title {
+    color: #88ff88;
+    text-shadow: 0 0 8px #88ff88;
+    text-align: center;
+}
+
+header, section {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(5px);
+    margin: 20px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+}
+
+ul {
+    margin-left: 20px;
+}
+
+.conclusion {
+    background: rgba(0, 255, 100, 0.1);
+    box-shadow: 0 0 15px rgba(0, 255, 100, 0.5);
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    h1, h2 {
+        font-size: 1.3em;
+    }
+}
+
+/* Buttons */
+.glow-btn {
+    background: linear-gradient(45deg, #00ffff, #0099ff);
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+    transition: 0.3s;
+}
+
+.glow-btn:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+/* Center Button Container */
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
