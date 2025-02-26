@@ -83,6 +83,24 @@
             border-radius: 10px;
             border: 2px solid #0ff;
         }
+        /* Buttons */
+        .glow-btn {
+            background: linear-gradient(45deg, #00ffff, #0099ff);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
+            transition: 0.3s;
+        }
+
+        .glow-btn:hover {
+            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
+            transform: scale(1.1);
+        }
         footer {
             margin-top: 20px;
             padding: 15px;
@@ -188,6 +206,8 @@
             </div>
         </section>
 
+        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
+
         <footer>
             <p>Powered by <span class="neon-text">NeuroSync AI</span></p>
         </footer>
@@ -235,12 +255,15 @@
                 // Delay gadget info animation
                 setTimeout(function() {
                     $('.gadget-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
-                }, 200);
+                }, 250);
     
-                // Delay hardware info animation
                 setTimeout(function() {
                     $('.hardware-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
-                }, 700); // 200ms + 500ms delay
+                }, 250);
+
+                // $('.gadget-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
+                // $('.hardware-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
+
     
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
             });
