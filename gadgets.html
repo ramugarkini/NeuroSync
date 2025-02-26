@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroSync AI - Gadgets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #111, #222);
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+        .neon-text {
+            font-size: 2rem;
+            color: #0ff;
+            text-shadow: 0 0 10px #0ff, 0 0 20px #0ff;
+        }
+        .gadget-display {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(-30px);
+            transition: all 0.5s ease-in-out;
+        }
+        .gadget-image {
+            width: 250px;
+            height: auto;
+            border-radius: 10px;
+            border: 2px solid #0ff;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .gadget-info, .hardware-info {
+            flex: 1;
+            text-align: left;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .gadget-info h2, .hardware-info h3 {
+            text-shadow: 0 0 5px #0ff;
+        }
+        .carousel-section {
+            margin-top: 30px;
+            transition: all 0.5s ease-in-out;
+        }
+        .gadget-carousel .gadget-item {
+            cursor: pointer;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gadget-carousel .gadget-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px #0ff;
+        }
+        .gadget-carousel img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 2px solid #0ff;
+        }
+        footer {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="neon-text">NeuroSync AI Gadgets</h1>
+        </header>
+        
+        <section class="gadget-display" id="gadget-display">
+            <div class="gadget-info">
+                <h2 id="gadget-name">Select a Gadget</h2>
+                <p id="gadget-description"></p>
+            </div>
+            <img id="gadget-image" class="gadget-image" src="" alt="Gadget Image">
+            <div class="hardware-info">
+                <h3>Hardware</h3>
+                <p id="gadget-details"></p>
+            </div>
+        </section>
+
+        <section class="carousel-section">
+            <div class="gadget-carousel">
+                <div class="gadget-item" data-name="Wearable NeuroSync Band" 
+                    data-description="Monitors brain activity, fatigue, and focus levels."
+                    data-details="EEG Sensors, Pulse Oximeter, Gyroscope, Bluetooth/Wi-Fi, AI Processor"
+                    data-image="img/1.jpg">
+                    <img src="img/1.jpg" alt="Wearable NeuroSync Band">
+                </div>
+                <div class="gadget-item" data-name="AI-Powered Smart Desk" 
+                    data-description="Auto-adjusts lighting, sound, and temperature."
+                    data-details="Smart Lights, Motion Sensor, IoT Control Hub, AI Module"
+                    data-image="img/2.jpg">
+                    <img src="img/2.jpg" alt="AI-Powered Smart Desk">
+                </div>
+                <div class="gadget-item" data-name="Smart Water Bottle" 
+                    data-description="Ensures proper hydration & nutrient intake to maintain peak brain function."
+                    data-details="Smart Water Bottle (Tracks water intake & hydration levels)"
+                    data-image="img/5.jpg">
+                    <img src="img/5.jpg" alt="Smart Water Bottle">
+                </div>
+                <div class="gadget-item" data-name="NeuroSync AI-Powered Earbuds" 
+                    data-description="AI-adjusted ambient sound, focus-enhancing audio."
+                    data-details="Noise Cancellation, AI Notifications, Binaural Beats"
+                    data-image="img/6.jpg">
+                    <img src="img/6.jpg" alt="AI-Powered Earbuds">
+                </div>
+                <div class="gadget-item" data-name="Smart Posture & Activity Tracker" 
+                    data-description="Tracks posture and provides movement reminders."
+                    data-details="Posture Sensor, Haptic Feedback, Wearable/Chair Attachment"
+                    data-image="img/7.jpg">
+                    <img src="img/7.jpg" alt="Smart Posture Tracker">
+                </div>
+                <div class="gadget-item" data-name="AI-Powered Smart Supplement Dispenser                " 
+                    data-description="Automates nutrient intake scheduling based on cognitive needs.                    "
+                    data-details="LSmart Capsule Dispenser (Releases supplements based on AI recommendations)                    "
+                    data-image="img/8.jpg">
+                    <img src="img/8.jpg" alt="Smart Supplement Dispenser">
+                </div>
+                <div class="gadget-item" data-name="AI-Powered VR-Based Memory Trainer                " 
+                    data-description="Uses Virtual Reality (VR) for immersive learning & memory training.                    "
+                    data-details="VR Headset (Simulates study environments)
+                    AI-Based Learning Assistance (Gamified memory techniques)"
+                    data-image="img/9.jpg">
+                    <img src="img/9.jpg" alt="VR">
+                </div>
+                <div class="gadget-item" data-name="AI-Powered Smart Chair" 
+                    data-description="Corrects posture for long study/work hours."
+                    data-details="Lumbar Support, Haptic Feedback, AI Alerts"
+                    data-image="img/10.jpg">
+                    <img src="img/10.jpg" alt="Smart Chair">
+                </div>
+                <div class="gadget-item" data-name="AI-Powered Smart Contact Lenses                " 
+                    data-description=" Monitors screen exposure, eye strain, and focus levels.                    "
+                    data-details="Embedded Digital Display
+                    Blue Light Filtering AI
+                    Real-Time Focus & Blink Rate Tracking"
+                    data-image="img/11.jpg">
+                    <img src="img/11.jpg" alt="Smart Chair">
+                </div>
+                <div class="gadget-item" data-name="Smart Sleep Pod                " 
+                    data-description="Analyzes sleep quality and automatically adjusts the environment.                    "
+                    data-details="Infrared Sleep Tracker (Monitors breathing & heart rate)
+
+                    White Noise Generator (Improves sleep quality)
+                    
+                    Air Quality Sensors (Maintains optimal oxygen levels)
+                    
+                    AI-Driven Alarm System (Wakes user at best sleep phase)"
+                    data-image="img/3.jpg">
+                    <img src="img/3.jpg" alt="Smart Chair">
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>Powered by <span class="neon-text">NeuroSync AI</span></p>
+        </footer>
+    </div>
+
+    
+    <!-- <script>
+        $(document).ready(function(){
+            $('.gadget-carousel').slick({ slidesToShow: 3, autoplay: true, dots: true });
+    
+            $('.gadget-item').click(function(){
+                $('#gadget-name').text($(this).data('name'));
+                $('#gadget-description').text($(this).data('description'));
+                $('#gadget-details').text($(this).data('details'));
+                $('#gadget-image').attr('src', $(this).data('image'));
+    
+                $('.gadget-info, .hardware-info').css('opacity', '0'); // Hide both initially
+                $('#gadget-display').css('opacity', '1').css('transform', 'translateY(0)');
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+    
+                // Show gadget info first
+                $('.gadget-info').css({ opacity: '1', transform: 'translateY(0)', transition: 'opacity 0.5s ease-in-out' });
+    
+                // Delay hardware info display by 0.5 seconds
+                setTimeout(function() {
+                    $('.hardware-info').css({ opacity: '1', transform: 'translateY(0)', transition: 'opacity 0.5s ease-in-out' });
+                }, 500);
+            });
+        });
+    </script> -->
+    <script>
+        $(document).ready(function(){
+            $('.gadget-carousel').slick({ slidesToShow: 3, autoplay: true, dots: true });
+    
+            $('.gadget-item').click(function(){
+                $('#gadget-name').text($(this).data('name'));
+                $('#gadget-description').text($(this).data('description'));
+                $('#gadget-details').text($(this).data('details'));
+                $('#gadget-image').attr('src', $(this).data('image'));
+    
+                $('.gadget-info, .hardware-info').css('opacity', '0'); // Reset opacity
+    
+                $('#gadget-display').css('opacity', '1').css('transform', 'translateY(0)');
+    
+                // Delay gadget info animation
+                setTimeout(function() {
+                    $('.gadget-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
+                }, 200);
+    
+                // Delay hardware info animation
+                setTimeout(function() {
+                    $('.hardware-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
+                }, 700); // 200ms + 500ms delay
+    
+                $('html, body').animate({ scrollTop: 0 }, 'slow');
+            });
+        });
+    </script>
+    
+    
+</body>
+</html>
