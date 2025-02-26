@@ -83,24 +83,6 @@
             border-radius: 10px;
             border: 2px solid #0ff;
         }
-        /* Buttons */
-        .glow-btn {
-            background: linear-gradient(45deg, #00ffff, #0099ff);
-            border: none;
-            color: white;
-            padding: 15px 30px;
-            font-size: 18px;
-            margin: 10px;
-            border-radius: 8px;
-            cursor: pointer;
-            box-shadow: 0 0 15px rgba(0, 255, 255, 0.7);
-            transition: 0.3s;
-        }
-
-        .glow-btn:hover {
-            box-shadow: 0 0 30px rgba(0, 255, 255, 1);
-            transform: scale(1.1);
-        }
         footer {
             margin-top: 20px;
             padding: 15px;
@@ -112,6 +94,109 @@
             from { opacity: 0; transform: scale(0.8); }
             to { opacity: 1; transform: scale(1); }
         }
+        @media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .neon-text {
+        font-size: 1.8rem;
+    }
+
+    .gadget-display {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .gadget-info, .hardware-info {
+        text-align: center;
+    }
+
+    .gadget-image {
+        width: 200px;
+    }
+
+    .gadget-carousel img {
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 5px;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .neon-text {
+        font-size: 1.5rem;
+    }
+
+    .gadget-display {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .gadget-image {
+        width: 150px;
+    }
+
+    .gadget-carousel img {
+        height: 150px;
+    }
+
+    .carousel-section {
+        margin-top: 20px;
+    }
+
+    .gadget-carousel {
+        padding: 10px;
+    }
+
+    .slick-slide {
+        margin: 5px;
+    }
+
+    .gadget-carousel .gadget-item {
+        padding: 10px;
+    }
+}
+
+/* Slick Carousel Customization */
+@media (max-width: 1024px) {
+    .gadget-carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .slick-slide {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gadget-carousel .slick-slide {
+        flex: 0 0 100%;
+    }
+
+    .gadget-carousel {
+        display: flex;
+        overflow-x: auto;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -206,38 +291,12 @@
             </div>
         </section>
 
-        <button class="glow-btn" onclick="window.location.href='index.html'">🏠 Back to Dashboard</button>
-
         <footer>
             <p>Powered by <span class="neon-text">NeuroSync AI</span></p>
         </footer>
     </div>
 
-    
-    <!-- <script>
-        $(document).ready(function(){
-            $('.gadget-carousel').slick({ slidesToShow: 3, autoplay: true, dots: true });
-    
-            $('.gadget-item').click(function(){
-                $('#gadget-name').text($(this).data('name'));
-                $('#gadget-description').text($(this).data('description'));
-                $('#gadget-details').text($(this).data('details'));
-                $('#gadget-image').attr('src', $(this).data('image'));
-    
-                $('.gadget-info, .hardware-info').css('opacity', '0'); // Hide both initially
-                $('#gadget-display').css('opacity', '1').css('transform', 'translateY(0)');
-                $('html, body').animate({ scrollTop: 0 }, 'slow');
-    
-                // Show gadget info first
-                $('.gadget-info').css({ opacity: '1', transform: 'translateY(0)', transition: 'opacity 0.5s ease-in-out' });
-    
-                // Delay hardware info display by 0.5 seconds
-                setTimeout(function() {
-                    $('.hardware-info').css({ opacity: '1', transform: 'translateY(0)', transition: 'opacity 0.5s ease-in-out' });
-                }, 500);
-            });
-        });
-    </script> -->
+
     <script>
         $(document).ready(function(){
             $('.gadget-carousel').slick({ slidesToShow: 3, autoplay: true, dots: true });
@@ -257,13 +316,10 @@
                     $('.gadget-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
                 }, 250);
     
+                // Delay hardware info animation
                 setTimeout(function() {
                     $('.hardware-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
                 }, 250);
-
-                // $('.gadget-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
-                // $('.hardware-info').css({ 'opacity': '1', 'transition': 'opacity 0.5s ease-in-out' });
-
     
                 $('html, body').animate({ scrollTop: 0 }, 'slow');
             });
