@@ -1,4 +1,4 @@
-# NeuroSync
+# NeuroSync - Prototype
 
 ## License
 Copyright © 2025 Ramu Garkini
